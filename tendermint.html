@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>How to write Tendermint Applications using Python 🌠 | Gautham Santhosh</title>
+    <meta name="description" content="Maker 💸 DeFi 🚀 Machine Learning">
+    <link rel="icon" href="/icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+  <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#000000">
+  <script src="https://cdn.emojicom.io/embed/widget.js"></script>
+    
+    <link rel="preload" href="/assets/css/0.styles.d25e21d4.css" as="style"><link rel="preload" href="/assets/js/app.fbf2b762.js" as="script"><link rel="preload" href="/assets/js/21.42e52586.js" as="script"><link rel="prefetch" href="/assets/js/10.66f5e789.js"><link rel="prefetch" href="/assets/js/11.4714ffea.js"><link rel="prefetch" href="/assets/js/12.4cbba138.js"><link rel="prefetch" href="/assets/js/13.4c975be5.js"><link rel="prefetch" href="/assets/js/14.40d27422.js"><link rel="prefetch" href="/assets/js/15.01484cc2.js"><link rel="prefetch" href="/assets/js/16.096791dc.js"><link rel="prefetch" href="/assets/js/17.22a4175d.js"><link rel="prefetch" href="/assets/js/18.07fea249.js"><link rel="prefetch" href="/assets/js/19.37edee47.js"><link rel="prefetch" href="/assets/js/2.5c6c86be.js"><link rel="prefetch" href="/assets/js/20.a79c3968.js"><link rel="prefetch" href="/assets/js/22.d663116c.js"><link rel="prefetch" href="/assets/js/3.188a7812.js"><link rel="prefetch" href="/assets/js/4.84efff4f.js"><link rel="prefetch" href="/assets/js/5.8b65b554.js"><link rel="prefetch" href="/assets/js/6.e0113abd.js"><link rel="prefetch" href="/assets/js/7.1a613d1d.js"><link rel="prefetch" href="/assets/js/8.961307ef.js"><link rel="prefetch" href="/assets/js/9.5cf1895c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d25e21d4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Gautham Santhosh</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/bio.html" class="nav-link">Bio</a></div><div class="nav-item"><a href="https://drive.google.com/file/d/0By4wRKJ5_4qJSUFyQ3doanlEQ00/view" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Resume
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Social</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/gauthamzz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://medium.com/@gauthamsanthosh" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Medium
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://twitter.com/gauthamzzz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Twitter
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://fb.com/gauthamzz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Facebook
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://instagram.com/gauthamzz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Instagram
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/bio.html" class="nav-link">Bio</a></div><div class="nav-item"><a href="https://drive.google.com/file/d/0By4wRKJ5_4qJSUFyQ3doanlEQ00/view" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Resume
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Social</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/gauthamzz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://medium.com/@gauthamsanthosh" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Medium
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://twitter.com/gauthamzzz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Twitter
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://fb.com/gauthamzz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Facebook
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://instagram.com/gauthamzz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Instagram
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/" class="sidebar-link">Home</a></li><li><a href="/tendermint.html" class="active sidebar-link">How to write Tendermint Applications using Python 🌠</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tendermint.html#byzantine-fault-tolerant" class="sidebar-link">Byzantine-fault tolerant</a></li><li class="sidebar-sub-header"><a href="/tendermint.html#state-machine-replication" class="sidebar-link">State machine replication</a></li><li class="sidebar-sub-header"><a href="/tendermint.html#writing-applications-using-tendermint" class="sidebar-link">Writing Applications using Tendermint</a></li><li class="sidebar-sub-header"><a href="/tendermint.html#let’s-code-our-application" class="sidebar-link">Let’s code our application</a></li><li class="sidebar-sub-header"><a href="/tendermint.html#conclusion" class="sidebar-link">Conclusion</a></li></ul></li><li><a href="/python.html" class="sidebar-link">Python Tricks 101🐍</a></li><li><a href="/manjaroDeepin.html" class="sidebar-link">Manjaro Deepin Review: A Clean Minimal and Powerful Linux Distro</a></li><li><a href="/git.html" class="sidebar-link">Common git questions and answers</a></li><li><a href="/googleform.html" class="sidebar-link">Create websites using Google Forms</a></li><li><a href="/mljobs.html" class="sidebar-link">Machine Learning Jobs List 👔</a></li><li><a href="/hackinthenorth3.html" class="sidebar-link">Hack in the North 3.0 🐺</a></li><li><a href="/anna.html" class="sidebar-link">Anna Assistant 🐘</a></li><li><a href="/pelican.html" class="sidebar-link">Pelican</a></li><li><a href="/pytorch.html" class="sidebar-link">PyTorch 101</a></li><li><a href="/nybles.html" class="sidebar-link">Nybles</a></li><li><a href="/audio.html" class="sidebar-link">Audio Style Transfer</a></li><li><a href="/hint2.html" class="sidebar-link">Hack in the North 2.0</a></li><li><a href="/opencode.html" class="sidebar-link">OpenCode 2017</a></li><li><a href="/iiitahacks.html" class="sidebar-link">IIITA Hacks</a></li><li><a href="/hint.html" class="sidebar-link">Hack in the North</a></li></ul> </div> <div class="page"> <div class="content"><h1 id="how-to-write-tendermint-applications-using-python-🌠"><a href="#how-to-write-tendermint-applications-using-python-🌠" aria-hidden="true" class="header-anchor">#</a> How to write Tendermint Applications using Python 🌠</h1> <p><img src="https://cdn-images-1.medium.com/max/2560/1*phm1pnPQNE8fRcPBIw2wCw.png" alt> <span class="figcaption_hack">source tendermint.com</span></p> <blockquote><p>Byzantine-fault tolerant state machine replication. Or blockchain, for short.</p></blockquote> <p>This is the first things you see when you open the Tendermint website. Odds are
+you already know what a blockchain is, It’s the technology which powers Bitcoin,
+Ethereum and other decentralized coins you heard of. The basic premise is that
+people can make applications in a decentralized way, and you can write in any
+programming language you prefer. Maybe you are confused so let’s back up a bit.</p> <hr> <p>Byzantine-fault tolerant state replication machine — a really large word which
+makes no sense, unless you are good in decentralized systems. Let’s break up
+this word.</p> <h2 id="byzantine-fault-tolerant"><a href="#byzantine-fault-tolerant" aria-hidden="true" class="header-anchor">#</a> Byzantine-fault tolerant</h2> <p>It’s better explained using<a href="https://web.archive.org/web/20170205142845/http://lamport.azurewebsites.net/pubs/byz.pdf" target="_blank" rel="noopener noreferrer"> the Byzantine Generals
+Problem<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</p> <p><img src="https://cdn-images-1.medium.com/max/800/1*VeOnqynnx5o_fkOrG29aKQ.jpeg" alt> <span class="figcaption_hack">Need to remove traitor generals.</span></p> <blockquote><p>This situation can be expressed abstractly in terms of a group of generals of
+the Byzantine army camped with their troops around an enemy city. Communicating
+only by messenger, the generals must <strong>agree upon a common battle plan</strong>.
+However, one or more of them may be traitors who will try to confuse the others.
+The problem is to find an algorithm to ensure that the loyal generals will reach
+agreement. It is shown that, using only oral messages, this problem is solvable
+if and only if <strong>more than two-thirds</strong> of the generals are loyal; so a single
+traitor can confound two loyal generals. With unforgeable written messages, the
+problem is solvable for any number of generals and possible traitors.</p></blockquote> <p>A system is said to be BFT if it can continue to operate even if certain
+participants drop out or are adversarial. With respect to consensus algorithms,
+Byzantine fault tolerance normally means the algorithm is guaranteed to
+converge, or capable of reaching consensus, even if there are adversarial nodes
+or if nodes drop from the network, etc. In this sense, BFT is a property of a
+consensus algorithm rather than an algorithm itself.<br> The idea is that for a
+system of parties who are decentralized all over the world, for them to have a
+common agreement or consensus among each other. And for this, there is a need
+for 2/3rd’s of the people, to be honest.</p> <p>Hard parts over, now let’s look at the second part.</p> <h2 id="state-machine-replication"><a href="#state-machine-replication" aria-hidden="true" class="header-anchor">#</a> <a href="https://en.wikipedia.org/wiki/State_machine_replication" target="_blank" rel="noopener noreferrer">State machine replication<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></h2> <p>In computer science, a <em>state machine</em> refers to something that will read a
+series of inputs and, based on those inputs, will transition to a new state.</p> <p><img src="https://cdn-images-1.medium.com/max/800/1*hJ8eDA-YXM62paxFfvNK_A.png" alt></p> <p>With Tendermint’s state machine, we begin with a “genesis state.” This is
+analogous to a blank slate before any transactions have happened on the network.
+When transactions are executed, this genesis state transitions into some final
+state. At any point in time, this final state represents the current state of
+Tendermint.</p> <p><img src="https://cdn-images-1.medium.com/max/800/1*u2bo41-QYZwctRaJR7uEUA.png" alt></p> <p>The programmer defines the initial state that should tolerate failures and the
+set of allowable transitions on this state, and the system ensures that every
+replica starts in the same state, and every replica makes the same state
+transitions in the same order. This is state machine replication.</p> <p><em>Or we can just call it a blockchain</em>. Now let’s get into the details of things.</p> <hr> <h2 id="writing-applications-using-tendermint"><a href="#writing-applications-using-tendermint" aria-hidden="true" class="header-anchor">#</a> Writing Applications using Tendermint</h2> <blockquote><p>Tendermint can replicate deterministic state machines written in any programming
+language.</p></blockquote> <p><img src="https://cdn-images-1.medium.com/max/800/1*dkhrybKc6E-EZi-KrUS8yA.png" alt> <span class="figcaption_hack">TSMP is called ABCI now</span></p> <p>Which is pretty good, considering if you wish to make an application for
+Ethereum you end up learning solidity. Bare with me, it’s a bit tricky.</p> <h3 id="start-off-by-installing-tendermint"><a href="#start-off-by-installing-tendermint" aria-hidden="true" class="header-anchor">#</a> Start off by installing Tendermint</h3> <p><a href="https://tendermint.com/docs/introduction/quick-start.html#install" target="_blank" rel="noopener noreferrer">link<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>Let’s first run a pre-built application and then understand how to make it
+our-self. We will use an application called kvstore. It’s a simple application
+which will take a “key” and a “value” and stores it. So that later you can get
+the value when you search for the “key”. A very simple database application.</p> <p><img src="https://cdn-images-1.medium.com/max/800/1*lxMQB2bMlK8QYFTqcdlytw.png" alt></p> <h3 id="running-pre-built-kvstore"><a href="#running-pre-built-kvstore" aria-hidden="true" class="header-anchor">#</a> Running pre-built kvstore</h3> <p>The Tendermint team has already build kvstore example into the application. <br>
+Better you type these parts as we go, that’s why I didn’t type the output.</p> <div class="language- extra-class"><pre class="language-text"><code># Create the genesis block, for the node.
+tendermint init
+
+# Now that the gensis block is inilaised we can start 
+# the application on the system 
+tendermint node --proxy_app=kvstore
+
+# This will start the kvstore application in your
+# computer in port 26657.
+# Lets test the kv store application by sending a request to the application
+curl -s 'localhost:26657/broadcast_tx_commit?tx=&quot;gautham=awesome&quot;'
+
+# You will get a JSON file if its successful
+
+# Now you can check if it actually worked
+curl -s 'localhost:26657/abci_query?data=&quot;gautham&quot;'
+
+# Now this will give you an output 'awesome' or YXdlc29tZQ== which 
+# is awesome in base 64. 
+</code></pre></div><p><br> Let’s breakdown the process we started an application using the command
+‘tendermint node’. The tendermint application runs on port 26657 on your local
+machine. Go to that port to see the application running smoothly. You have so
+many methods which you can use.</p> <p><a href="https://asciinema.org/a/ddaa7WWd3lrV7l1NP3ZYU3AD3" target="_blank" rel="noopener noreferrer"><img src="https://asciinema.org/a/ddaa7WWd3lrV7l1NP3ZYU3AD3.svg" alt="asciicast"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><a href="https://asciinema.org/a/U6SkGnw40EveOGgP2MX1oiGxB" target="_blank" rel="noopener noreferrer"><img src="https://asciinema.org/a/U6SkGnw40EveOGgP2MX1oiGxB.svg" alt="asciicast"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h3 id="kvstore-using-abci-cli"><a href="#kvstore-using-abci-cli" aria-hidden="true" class="header-anchor">#</a> KVStore using abci-cli</h3> <p>Why don’t we do the same task in a different way, where you don’t have you type
+curl command always. Tendermint has this tool called abci-console which allows
+you to send requests easily to the Tendermint application.</p> <p>ABCI is short for application blockchain interface, which connects the
+application with the blockchain.</p> <p>The abci-console allows people to send Transactions easily. Now let us see the
+methods we used in abci-console to send transactions to Tendermint.</p> <div class="language- extra-class"><pre class="language-text"><code># Lets do in a different way 
+tendermint init --home &quot;.node&quot;
+
+# Start a tendermint node 
+tendermint node --home &quot;.node&quot;
+
+# Open a new terminal and start kvstore from abci-console
+abci-console kvstore
+
+# Open new terminal and start abci-console
+abci-cli console
+I[2019-01-31|22:16:34.170] Starting socketClient                        module=abci-client impl=socketClient
+&gt; deliver_tx &quot;gautham=awesome&quot;
+-&gt; code: OK
+&gt; commit
+-&gt; code: OK
+-&gt; data.hex: 0x0400000000000000
+&gt; query &quot;gautham&quot;
+-&gt; code: OK
+-&gt; log: exists
+-&gt; height: 0
+-&gt; key: gautham
+-&gt; key.hex: 6761757468616D
+-&gt; value: awesome
+-&gt; value.hex: 617765736F6D65
+</code></pre></div><p>We used deliver_tx to send a transaction, this is the part where the state is
+updated in our machine. we committed that transaction to store the transaction,
+this is where the state increases the height of the chain stores the block.
+After which we query it from the Tendermint node, which is basically looking up
+the state for the value for the given key.</p> <p><img src="https://cdn-images-1.medium.com/max/800/1*6fTKb38pjlhOkUg50rbLtg.png" alt></p> <br> <p>Let us summarize.</p> <blockquote><p>You deliver a transaction, then you commit the transaction and then you can
+query the transaction.</p></blockquote> <p>Now, let us look at how to make the KV Store application as you want. <br> If
+you notice I used the home flag, It’s to make sure the genesis token is in the
+folder named node.</p> <h2 id="let’s-code-our-application"><a href="#let’s-code-our-application" aria-hidden="true" class="header-anchor">#</a> Let’s code our application</h2> <p>I will be writing an application in Python, which is a very simple language I
+think you can follow it even if you don’t understand it. <a href="https://github.com/tendermint/tendermint/blob/e6a6c6523eae02ce62e08c107dbd27f33b79a107/abci/example/python3_kvstore/kvstore.py" target="_blank" rel="noopener noreferrer">The full code is
+here<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>
+if you wish to see it.</p> <p>I will be using <a href="https://github.com/davebryson/py-abci" target="_blank" rel="noopener noreferrer">the py-abci<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> module,
+which is a wrapper for abci in python. I am not going to reinvent the wheel.</p> <p>We will start off by creating a state of the Tendermint node. I will add a DB
+which is MemoryDB, a size to define the size of the state, a height to define
+the height of the block and an apphash for the application.</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">State</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> db<span class="token punctuation">,</span> size<span class="token punctuation">,</span> height<span class="token punctuation">,</span> apphash<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>db <span class="token operator">=</span> db
+        self<span class="token punctuation">.</span>size <span class="token operator">=</span> size
+        self<span class="token punctuation">.</span>height <span class="token operator">=</span> height
+        self<span class="token punctuation">.</span>apphash <span class="token operator">=</span> apphash
+</code></pre></div><h4 id="deliver-tx"><a href="#deliver-tx" aria-hidden="true" class="header-anchor">#</a> Deliver_tx</h4> <p>If you remember the deliver_tx in the above example we send the key and value
+pair to the Tendermint node. And this key and value are stored in the DB and
+state is updated.</p> <div class="language-python extra-class"><pre class="language-python"><code>  <span class="token keyword">def</span> <span class="token function">deliver_tx</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> tx<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      <span class="token triple-quoted-string string">&quot;&quot;&quot;Validate the transaction before mutating the state.
+      Args:
+          raw_tx: a raw string (in bytes) transaction.
+      &quot;&quot;&quot;</span>
+      parts <span class="token operator">=</span> tx<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">b'='</span><span class="token punctuation">)</span>
+      <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>parts<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">:</span>
+          key<span class="token punctuation">,</span> value <span class="token operator">=</span> parts<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> parts<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+      <span class="token keyword">else</span><span class="token punctuation">:</span>
+          key<span class="token punctuation">,</span> value <span class="token operator">=</span> tx
+      self<span class="token punctuation">.</span>state<span class="token punctuation">.</span>db<span class="token punctuation">.</span><span class="token builtin">set</span><span class="token punctuation">(</span>prefix_key<span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+      self<span class="token punctuation">.</span>state<span class="token punctuation">.</span>size <span class="token operator">+=</span> <span class="token number">1</span>
+      <span class="token keyword">return</span> ResponseDeliverTx<span class="token punctuation">(</span>code<span class="token operator">=</span>CodeTypeOk<span class="token punctuation">)</span>
+</code></pre></div><p>The data input is in bytes. So we split the string using ‘=’ and save the key
+and value pair. The size variable we had set will be increased.</p> <p>Now that a transaction is delivered we need to save the state, for that we use
+commit.</p> <h4 id="commit"><a href="#commit" aria-hidden="true" class="header-anchor">#</a> Commit</h4> <p>During commit, we need to return an apphash, representing the change of state in
+the chain. I am creating a big-endian notation of the size as the apphash. The
+height of the chain is increased and we are saving the state.</p> <div class="language-python extra-class"><pre class="language-python"><code>  <span class="token keyword">def</span> <span class="token function">commit</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      byte_length <span class="token operator">=</span> <span class="token builtin">max</span><span class="token punctuation">(</span>ceil<span class="token punctuation">(</span>self<span class="token punctuation">.</span>state<span class="token punctuation">.</span>size<span class="token punctuation">.</span>bit_length<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+      app_hash <span class="token operator">=</span> self<span class="token punctuation">.</span>state<span class="token punctuation">.</span>size<span class="token punctuation">.</span>to_bytes<span class="token punctuation">(</span>byte_length<span class="token punctuation">,</span> byteorder<span class="token operator">=</span><span class="token string">'big'</span><span class="token punctuation">)</span>
+      self<span class="token punctuation">.</span>state<span class="token punctuation">.</span>app_hash <span class="token operator">=</span> app_hash
+      self<span class="token punctuation">.</span>state<span class="token punctuation">.</span>height <span class="token operator">+=</span> <span class="token number">1</span>
+      self<span class="token punctuation">.</span>state<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> ResponseCommit<span class="token punctuation">(</span>data<span class="token operator">=</span>app_hash<span class="token punctuation">)</span>
+</code></pre></div><p>Now that we have updated the state, we need to ensure that the application
+works. So let us make a query.</p> <h4 id="query"><a href="#query" aria-hidden="true" class="header-anchor">#</a> Query</h4> <p>The query seems straight forward. You check if the value is in the DB and return
+it.</p> <div class="language-python extra-class"><pre class="language-python"><code>
+  <span class="token keyword">def</span> <span class="token function">query</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> req<span class="token punctuation">)</span><span class="token punctuation">:</span>
+          value <span class="token operator">=</span> self<span class="token punctuation">.</span>state<span class="token punctuation">.</span>db<span class="token punctuation">.</span>get<span class="token punctuation">(</span>prefix_key<span class="token punctuation">(</span>req<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span>
+          <span class="token keyword">return</span> ResponseQuery<span class="token punctuation">(</span>code<span class="token operator">=</span>CodeTypeOk<span class="token punctuation">,</span> value<span class="token operator">=</span>value<span class="token punctuation">)</span>
+</code></pre></div><br> <p><strong>That’s it</strong>. HURRRRRRAAAAAAAAAAAAYYYYYYYY.</p> <p>We took care of delivering the transaction, then we made the commit and query.</p> <p>One thing we can ensure is that if the transaction is bad, we can neglect it
+from entering the mempool of the blockchain. We can use check_tx method for
+that, but that’s unnecessary for this use case.</p> <p>Now do check out the whole code or write the rest yourself, in your favourite
+programming language.</p> <p><a href="https://github.com/tendermint/tendermint/tree/e6a6c6523eae02ce62e08c107dbd27f33b79a107/abci/example/kvstore" target="_blank" rel="noopener noreferrer">There is another example in Go if you wish to take a
+look.<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h4 id="notes"><a href="#notes" aria-hidden="true" class="header-anchor">#</a> Notes</h4> <p>After you start the tendermint node then run your python code to run the
+application. Then you should be able to send requests just like the kvstore
+example above.</p> <p><img src="https://cdn-images-1.medium.com/max/800/1*irtYZac2qbxaWGmJ43xqSQ.jpeg" alt></p> <p>The tendermint node runs in port 26657 and abci in 26658.</p> <h2 id="conclusion"><a href="#conclusion" aria-hidden="true" class="header-anchor">#</a> Conclusion</h2> <p>…Phew! You made it to the end. I hope?</p> <p>There’s a lot to digest in this post, I know. If it takes you multiple reads to
+fully understand what’s going on, that’s totally fine. I personally read the
+various parts of the codebase many times and coded the application before
+grokking what was going on.</p> <p>Nonetheless, I hope you found this overview helpful. If you find any errors or
+mistakes, I’d love for you to write a private note or post it directly in the
+comments. I look at all of ’em, I promise.</p> <p>And remember, I’m human (yep, it’s true) and I make mistakes. I took the time to
+write this post for the benefit of the community, for free. So please be
+constructive in your feedback, without unnecessary bashing. 🙏</p> <h4 id="resources"><a href="#resources" aria-hidden="true" class="header-anchor">#</a> Resources</h4> <p>[1]<a href="https://www.reddit.com/r/CryptoTechnology/comments/8782mb/what_is_the_difference_between_normal_byzantine/" target="_blank" rel="noopener noreferrer">https://www.reddit.com/r/CryptoTechnology/comments/8782mb/what_is_the_difference_between_normal_byzantine/<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>[2]<a href="https://web.archive.org/web/20170205142845/http://lamport.azurewebsites.net/pubs/byz.pdf" target="_blank" rel="noopener noreferrer">https://web.archive.org/web/20170205142845/http://lamport.azurewebsites.net/pubs/byz.pdf<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>[3]<a href="http://hackingdistributed.com/2013/12/26/introducing-replicant/" target="_blank" rel="noopener noreferrer">http://hackingdistributed.com/2013/12/26/introducing-replicant/<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>[4] <a href="https://medium.com/@preethikasireddy/how-does-ethereum-work-anyway-22d1df506369" target="_blank" rel="noopener noreferrer">https://medium.com/@preethikasireddy/how-does-ethereum-work-anyway-22d1df506369<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/" class="prev router-link-active">
+          Home
+        </a></span> <span class="next"><a href="/python.html">
+          Python Tricks 101🐍
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.fbf2b762.js" defer></script><script src="/assets/js/21.42e52586.js" defer></script>
+  </body>
+</html>
