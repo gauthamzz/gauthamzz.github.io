@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>The Bybit Hack: Largest Crypto Heist in History | Gautham Santhosh</title>
+    <meta name="description" content="Breaking down the largest crypto heist ever - $1.46B+ stolen from Bybit, representing 16% of ALL previous crypto hacks combined.">
+    <link rel="icon" href="/icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+  <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/assets/css/0.styles.d25e21d4.css" as="style"><link rel="preload" href="/assets/js/app.fbf2b762.js" as="script"><link rel="preload" href="/assets/js/21.42e52586.js" as="script">
+    <link rel="stylesheet" href="/assets/css/0.styles.d25e21d4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><span class="site-name">Gautham Santhosh</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/bio.html" class="nav-link">Bio</a></div><div class="nav-item"><a href="https://drive.google.com/file/d/0By4wRKJ5_4qJSUFyQ3doanlEQ00/view" target="_blank" rel="noopener noreferrer" class="nav-link external">Resume</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Social</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><a href="https://github.com/gauthamzz" target="_blank" rel="noopener noreferrer" class="nav-link external">GitHub</a></li><li class="dropdown-item"><a href="https://medium.com/@gauthamsanthosh" target="_blank" rel="noopener noreferrer" class="nav-link external">Medium</a></li><li class="dropdown-item"><a href="https://twitter.com/gauthamzzz" target="_blank" rel="noopener noreferrer" class="nav-link external">Twitter</a></li></ul></div></div></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/bio.html" class="nav-link">Bio</a></div><div class="nav-item"><a href="https://drive.google.com/file/d/0By4wRKJ5_4qJSUFyQ3doanlEQ00/view" target="_blank" rel="noopener noreferrer" class="nav-link external">Resume</a></div></nav> <ul class="sidebar-links"><li><a href="/" class="sidebar-link">Home</a></li><li><a href="/hyperliquid-centralization.html" class="sidebar-link">Hyperliquid's Centralization Problem</a></li><li><a href="/bybit-hack.html" class="sidebar-link">The Bybit Hack</a></li><li><a href="/ethereum-l2-blob-space.html" class="sidebar-link">Ethereum L2s Are About to Hit a Brick Wall</a></li><li><a href="/sony-l2-censorship.html" class="sidebar-link">Sony's L2 Censorship Backfire</a></li><li><a href="/l2-value-accrual.html" class="sidebar-link">Why General Purpose L2s Might Be a Trap</a></li><li><a href="/tendermint.html" class="sidebar-link">How to write Tendermint Applications using Python</a></li><li><a href="/python.html" class="sidebar-link">Python Tricks 101</a></li></ul> </div> <div class="page"> <div class="content">
+
+<h1>The Bybit Hack: Largest Crypto Heist in History</h1>
+<p><em>February 21, 2025</em></p>
+
+<p>On February 21, 2025, the crypto industry witnessed its single largest hack in history. Over $1.46 billion was stolen from Bybit in one attack. To put that number in perspective, this single heist represents roughly 16% of all the value stolen in every previous crypto hack combined. That is not a typo. One attack equaled about a sixth of everything that came before it across the entire history of the industry.</p>
+
+<p>The attack targeted Bybit's cold wallet infrastructure, which is supposed to be the most secure part of any exchange's architecture. Cold wallets are kept offline specifically to prevent exactly this kind of theft. The attacker managed to compromise the signing process during a routine transfer from Bybit's cold wallet to a warm wallet. By manipulating the transaction payload that the signers approved, the attacker redirected the funds to their own addresses. The signers believed they were approving a legitimate internal transfer, but the underlying transaction had been altered. It was a sophisticated supply chain attack on the signing infrastructure itself.</p>
+
+<p>What struck me most about this incident was how it exposed a fundamental vulnerability in the way centralized exchanges manage custody. Multi-signature wallets are only as secure as the environment in which signatures are produced. If an attacker can compromise the interface that presents transactions to signers, it does not matter how many signatures you require -- every signer will approve what looks like a legitimate transaction. This is a UI-layer attack against a cryptographic security model, and it is devastatingly effective.</p>
+
+<p>The industry response was swift. Other exchanges, including Binance and Bitget, offered support. Bybit's CEO Ben Zhou communicated transparently throughout the crisis, confirming that customer withdrawals would be honored and that the exchange remained solvent. To their credit, Bybit processed over 350,000 withdrawal requests in the hours following the hack without pausing withdrawals -- a move that helped prevent a broader crisis of confidence. But the fact remains that $1.46 billion was stolen, and the vast majority of it is unlikely to be recovered.</p>
+
+<p>For those of us building in the derivatives space, the Bybit hack is a stark reminder of why custody architecture matters so much. At Polynomial, we have always believed that the long-term future of trading infrastructure is non-custodial. When users maintain control of their own keys and interact with protocols through smart contracts, the attack surface for this kind of catastrophic theft simply does not exist. You cannot steal $1.46 billion from a cold wallet if there is no cold wallet holding $1.46 billion. The tradeoff is complexity and user experience, but incidents like this make the case that the tradeoff is worth it.</p>
+
+<p>The Bybit hack should serve as a watershed moment for the industry. We have spent years building increasingly sophisticated DeFi protocols that eliminate custodial risk, and the largest hack in crypto history just demonstrated exactly why that work matters. The question is not whether centralized exchange hacks will continue to happen -- they will. The question is how quickly the industry migrates to infrastructure where they cannot.</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The largest crypto heist in history just happened.<br><br>$1.46B+ stolen from Bybit.<br><br>That&#39;s 16% of ALL previous crypto hacks. Combined.<br><br>Here&#39;s what we know: <a href="https://t.co/placeholder">pic.twitter.com/placeholder</a></p>&mdash; Gautham Santhosh (@gauthamzzz) <a href="https://twitter.com/gauthamzzz/status/1893004593979859410">February 21, 2025</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><a href="https://x.com/gauthamzzz/status/1893004593979859410" target="_blank" rel="noopener noreferrer">Read the full thread on X</a></p>
+
+</div> <div class="page-edit"></div> </div></div></div>
+    <script src="/assets/js/app.fbf2b762.js" defer></script><script src="/assets/js/21.42e52586.js" defer></script>
+  </body>
+</html>

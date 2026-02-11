@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Why General Purpose L2s Might Be a Trap | Gautham Santhosh</title>
+    <meta name="description" content="HyperLiquid approaching Arbitrum's market cap reveals a crucial insight about the future of L2s and where protocols should build.">
+    <link rel="icon" href="/icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+  <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/assets/css/0.styles.d25e21d4.css" as="style"><link rel="preload" href="/assets/js/app.fbf2b762.js" as="script"><link rel="preload" href="/assets/js/21.42e52586.js" as="script">
+    <link rel="stylesheet" href="/assets/css/0.styles.d25e21d4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><span class="site-name">Gautham Santhosh</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/bio.html" class="nav-link">Bio</a></div><div class="nav-item"><a href="https://drive.google.com/file/d/0By4wRKJ5_4qJSUFyQ3doanlEQ00/view" target="_blank" rel="noopener noreferrer" class="nav-link external">Resume</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Social</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><a href="https://github.com/gauthamzz" target="_blank" rel="noopener noreferrer" class="nav-link external">GitHub</a></li><li class="dropdown-item"><a href="https://medium.com/@gauthamsanthosh" target="_blank" rel="noopener noreferrer" class="nav-link external">Medium</a></li><li class="dropdown-item"><a href="https://twitter.com/gauthamzzz" target="_blank" rel="noopener noreferrer" class="nav-link external">Twitter</a></li></ul></div></div></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/bio.html" class="nav-link">Bio</a></div><div class="nav-item"><a href="https://drive.google.com/file/d/0By4wRKJ5_4qJSUFyQ3doanlEQ00/view" target="_blank" rel="noopener noreferrer" class="nav-link external">Resume</a></div></nav> <ul class="sidebar-links"><li><a href="/" class="sidebar-link">Home</a></li><li><a href="/hyperliquid-centralization.html" class="sidebar-link">Hyperliquid's Centralization Problem</a></li><li><a href="/bybit-hack.html" class="sidebar-link">The Bybit Hack</a></li><li><a href="/ethereum-l2-blob-space.html" class="sidebar-link">Ethereum L2s Are About to Hit a Brick Wall</a></li><li><a href="/sony-l2-censorship.html" class="sidebar-link">Sony's L2 Censorship Backfire</a></li><li><a href="/l2-value-accrual.html" class="sidebar-link">Why General Purpose L2s Might Be a Trap</a></li><li><a href="/tendermint.html" class="sidebar-link">How to write Tendermint Applications using Python</a></li><li><a href="/python.html" class="sidebar-link">Python Tricks 101</a></li></ul> </div> <div class="page"> <div class="content">
+
+<h1>Why General Purpose L2s Might Be a Trap</h1>
+<p><em>December 5, 2024</em></p>
+
+<p>Something happened in December 2024 that should make every protocol team rethink their infrastructure strategy. HyperLiquid, an app-specific chain built exclusively for perpetual futures trading, was approaching Arbitrum's market cap. Let that sink in for a moment. A single-purpose chain focused on one product vertical was rivaling the valuation of the most established general-purpose L2 in the Ethereum ecosystem -- a chain with hundreds of deployed protocols, billions in TVL across DeFi, and years of ecosystem development. This was not a fluke. It was a signal.</p>
+
+<p>The conventional wisdom in crypto has been that general-purpose L2s are the way to go. Build a platform, attract developers, create an ecosystem, and capture value through the network effects of having many applications on your chain. This is the Arbitrum model, the Base model, and the model that dozens of other L2s are pursuing. It mirrors the platform playbook from Web2 -- become the app store, take a cut of everything. But HyperLiquid's valuation approaching Arbitrum's suggests that the market is beginning to price in a very different thesis.</p>
+
+<p>The insight is straightforward: app-specific chains that own their entire stack can capture more value per unit of activity than general-purpose platforms. When HyperLiquid processes a perpetual futures trade, the chain captures the full economic value of that transaction -- the sequencer fees, the MEV, the data availability costs, everything. There is no value leakage to other protocols or infrastructure providers. On a general-purpose L2 like Arbitrum, a perps protocol like GMX captures some of the value, but the rest leaks to the L2 itself, to other MEV searchers, and to the broader ecosystem. The app-specific chain eliminates these intermediaries.</p>
+
+<p>There is also a product quality argument. When you control the entire stack -- from the consensus layer to the execution environment to the frontend -- you can optimize every layer for your specific use case. HyperLiquid can tune their block times, their transaction ordering, their fee structure, and their oracle integration specifically for derivatives trading. A perps protocol deployed on Arbitrum has to work within the constraints of a general-purpose execution environment that also needs to support lending, DEXs, NFTs, gaming, and everything else. The app-specific chain wins on performance because it does not have to compromise.</p>
+
+<p>This is exactly the thesis we have been executing on at Polynomial. We built our own chain specifically optimized for derivatives trading rather than deploying on an existing general-purpose L2. The reasoning was simple: if you have strong product-market fit and your application generates enough economic activity to justify the infrastructure cost, owning your chain gives you a structural advantage in both value capture and product quality. You keep the sequencer revenue. You control the MEV. You optimize the execution environment for your users. And increasingly, the market is validating this approach.</p>
+
+<p>That said, this is not a universal prescription. Building your own chain comes with significant operational overhead -- you need to run infrastructure, manage upgrades, handle security, and maintain liveness. For protocols that are still searching for product-market fit, the overhead of running a chain is a distraction. The general-purpose L2 model remains excellent for early-stage protocols, long-tail applications, and use cases that benefit from composability with other protocols. But for protocols that have found their market and are generating meaningful economic activity, the HyperLiquid example makes the case clearly: owning your chain is not just a vanity project. It is a fundamentally better economic structure, and the market is starting to price that in.</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">HyperLiquid is approaching Arbitrum&#39;s market cap.<br><br>An app-specific chain rivaling the biggest general-purpose L2.<br><br>This tells us something crucial about where crypto is heading: <a href="https://t.co/placeholder">pic.twitter.com/placeholder</a></p>&mdash; Gautham Santhosh (@gauthamzzz) <a href="https://twitter.com/gauthamzzz/status/1864659097209176065">December 5, 2024</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><a href="https://x.com/gauthamzzz/status/1864659097209176065" target="_blank" rel="noopener noreferrer">Read the full thread on X</a></p>
+
+</div> <div class="page-edit"></div> </div></div></div>
+    <script src="/assets/js/app.fbf2b762.js" defer></script><script src="/assets/js/21.42e52586.js" defer></script>
+  </body>
+</html>

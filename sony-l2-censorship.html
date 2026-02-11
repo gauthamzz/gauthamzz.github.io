@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sony's L2 Censorship Backfire | Gautham Santhosh</title>
+    <meta name="description" content="Sony launched an OP Stack L2 and tried to block unapproved tokens. It spectacularly backfired in less than 24 hours.">
+    <link rel="icon" href="/icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+  <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/assets/css/0.styles.d25e21d4.css" as="style"><link rel="preload" href="/assets/js/app.fbf2b762.js" as="script"><link rel="preload" href="/assets/js/21.42e52586.js" as="script">
+    <link rel="stylesheet" href="/assets/css/0.styles.d25e21d4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><span class="site-name">Gautham Santhosh</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/bio.html" class="nav-link">Bio</a></div><div class="nav-item"><a href="https://drive.google.com/file/d/0By4wRKJ5_4qJSUFyQ3doanlEQ00/view" target="_blank" rel="noopener noreferrer" class="nav-link external">Resume</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Social</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><a href="https://github.com/gauthamzz" target="_blank" rel="noopener noreferrer" class="nav-link external">GitHub</a></li><li class="dropdown-item"><a href="https://medium.com/@gauthamsanthosh" target="_blank" rel="noopener noreferrer" class="nav-link external">Medium</a></li><li class="dropdown-item"><a href="https://twitter.com/gauthamzzz" target="_blank" rel="noopener noreferrer" class="nav-link external">Twitter</a></li></ul></div></div></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/bio.html" class="nav-link">Bio</a></div><div class="nav-item"><a href="https://drive.google.com/file/d/0By4wRKJ5_4qJSUFyQ3doanlEQ00/view" target="_blank" rel="noopener noreferrer" class="nav-link external">Resume</a></div></nav> <ul class="sidebar-links"><li><a href="/" class="sidebar-link">Home</a></li><li><a href="/hyperliquid-centralization.html" class="sidebar-link">Hyperliquid's Centralization Problem</a></li><li><a href="/bybit-hack.html" class="sidebar-link">The Bybit Hack</a></li><li><a href="/ethereum-l2-blob-space.html" class="sidebar-link">Ethereum L2s Are About to Hit a Brick Wall</a></li><li><a href="/sony-l2-censorship.html" class="sidebar-link">Sony's L2 Censorship Backfire</a></li><li><a href="/l2-value-accrual.html" class="sidebar-link">Why General Purpose L2s Might Be a Trap</a></li><li><a href="/tendermint.html" class="sidebar-link">How to write Tendermint Applications using Python</a></li><li><a href="/python.html" class="sidebar-link">Python Tricks 101</a></li></ul> </div> <div class="page"> <div class="content">
+
+<h1>Sony's L2 Censorship Backfire</h1>
+<p><em>January 14, 2025</em></p>
+
+<p>Sony's blockchain venture, Soneium, launched as an OP Stack Layer 2 in January 2025, and almost immediately made a decision that would become a case study in why censorship on permissionless infrastructure does not work. They attempted to block tokens that were not "approved" by Sony from being transacted on the network. The crypto community's response was swift, creative, and decisive. Within 24 hours, the censorship attempt had completely failed.</p>
+
+<p>The backstory is that Sony, through its subsidiary Sony Block Solutions Labs, built Soneium using Optimism's open-source OP Stack -- the same modular framework that powers Base, and that we use at Polynomial for our own chain. The OP Stack is designed to be permissionless at its core. Anyone can deploy contracts, anyone can transact, and the sequencer processes transactions without discrimination. Sony, however, apparently believed they could layer corporate content moderation on top of this permissionless base. They attempted to filter out memecoin and other "unapproved" token transactions at the sequencer level, essentially trying to create a curated walled garden on top of open infrastructure.</p>
+
+<p>The crypto community did what it always does when faced with censorship: it routed around it. Developers quickly pointed out that the OP Stack's architecture provides multiple pathways for transaction inclusion. Even if the sequencer refuses to include a transaction, users can force-include transactions through the L1 -- this is a fundamental security property of optimistic rollups, not a bug. The forced inclusion mechanism exists specifically to ensure that no sequencer, no matter how motivated, can permanently censor user transactions. Within hours, people were deploying the very tokens Sony tried to block, and the Streisand effect kicked in hard -- the attempted censorship drew far more attention to the tokens than they would have received otherwise.</p>
+
+<p>This incident is particularly instructive for anyone building on the OP Stack, which includes us at Polynomial. The architecture has censorship resistance baked into its design at a fundamental level. The sequencer can delay transactions, but it cannot permanently prevent them. The L1 force-inclusion mechanism is a trustless escape hatch that ensures user sovereignty regardless of what the sequencer operator wants. Sony's mistake was not understanding -- or perhaps not caring -- that the infrastructure they chose to build on was specifically engineered to resist exactly what they were trying to do.</p>
+
+<p>There is a deeper lesson here about the collision between traditional corporate thinking and crypto-native infrastructure. Sony is a company that has spent decades controlling content distribution -- from music to movies to games. The idea that you control the platform and therefore control what happens on it is deeply ingrained in their corporate DNA. But blockchain infrastructure operates on fundamentally different principles. When you build on a permissionless stack, you are choosing to give up that control. You cannot have it both ways. You cannot get the benefits of credible neutrality and permissionless composability while also maintaining a corporate approval process for which tokens are allowed to exist.</p>
+
+<p>The speed of the failure is what makes this story so compelling. This was not a slow erosion of censorship over weeks or months. It took less than 24 hours for the entire effort to be rendered pointless. That timeline tells you everything you need to know about the strength of the censorship resistance properties built into modern rollup architectures. For builders choosing which stack to build on, this is actually a feature, not a bug. The guarantee that no single entity can censor your transactions is one of the most valuable properties of the OP Stack, and Sony's Soneium just provided a live production test proving it works exactly as designed.</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Sony launched an OP Stack L2 and tried to censor &quot;unapproved&quot; tokens.<br><br>It backfired spectacularly in less than 24 hours.<br><br>Here&#39;s what happened: <a href="https://t.co/placeholder">pic.twitter.com/placeholder</a></p>&mdash; Gautham Santhosh (@gauthamzzz) <a href="https://twitter.com/gauthamzzz/status/1879245705782735301">January 14, 2025</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><a href="https://x.com/gauthamzzz/status/1879245705782735301" target="_blank" rel="noopener noreferrer">Read the full thread on X</a></p>
+
+</div> <div class="page-edit"></div> </div></div></div>
+    <script src="/assets/js/app.fbf2b762.js" defer></script><script src="/assets/js/21.42e52586.js" defer></script>
+  </body>
+</html>

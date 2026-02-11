@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Ethereum L2s Are About to Hit a Brick Wall | Gautham Santhosh</title>
+    <meta name="description" content="55% of all blob space consumed by just 2 chains. At current growth rates, Ethereum L2 scaling is months away from breaking.">
+    <link rel="icon" href="/icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+  <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/assets/css/0.styles.d25e21d4.css" as="style"><link rel="preload" href="/assets/js/app.fbf2b762.js" as="script"><link rel="preload" href="/assets/js/21.42e52586.js" as="script">
+    <link rel="stylesheet" href="/assets/css/0.styles.d25e21d4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><span class="site-name">Gautham Santhosh</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/bio.html" class="nav-link">Bio</a></div><div class="nav-item"><a href="https://drive.google.com/file/d/0By4wRKJ5_4qJSUFyQ3doanlEQ00/view" target="_blank" rel="noopener noreferrer" class="nav-link external">Resume</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Social</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><a href="https://github.com/gauthamzz" target="_blank" rel="noopener noreferrer" class="nav-link external">GitHub</a></li><li class="dropdown-item"><a href="https://medium.com/@gauthamsanthosh" target="_blank" rel="noopener noreferrer" class="nav-link external">Medium</a></li><li><a href="https://twitter.com/gauthamzzz" target="_blank" rel="noopener noreferrer" class="nav-link external">Twitter</a></li></ul></div></div></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/bio.html" class="nav-link">Bio</a></div><div class="nav-item"><a href="https://drive.google.com/file/d/0By4wRKJ5_4qJSUFyQ3doanlEQ00/view" target="_blank" rel="noopener noreferrer" class="nav-link external">Resume</a></div></nav> <ul class="sidebar-links"><li><a href="/" class="sidebar-link">Home</a></li><li><a href="/hyperliquid-centralization.html" class="sidebar-link">Hyperliquid's Centralization Problem</a></li><li><a href="/bybit-hack.html" class="sidebar-link">The Bybit Hack</a></li><li><a href="/ethereum-l2-blob-space.html" class="sidebar-link">Ethereum L2s Are About to Hit a Brick Wall</a></li><li><a href="/sony-l2-censorship.html" class="sidebar-link">Sony's L2 Censorship Backfire</a></li><li><a href="/l2-value-accrual.html" class="sidebar-link">Why General Purpose L2s Might Be a Trap</a></li><li><a href="/tendermint.html" class="sidebar-link">How to write Tendermint Applications using Python</a></li><li><a href="/python.html" class="sidebar-link">Python Tricks 101</a></li></ul> </div> <div class="page"> <div class="content">
+
+<h1>Ethereum L2s Are About to Hit a Brick Wall</h1>
+<p><em>January 17, 2025</em></p>
+
+<p>I have been digging into Ethereum's blob space utilization numbers, and what I found is alarming. As of January 2025, 55% of all available blob space was being consumed by just two chains: Base and Arbitrum. At the growth rates we were seeing, Ethereum's entire L2 scaling model was months away from hitting a hard capacity ceiling. This is not a distant hypothetical problem. It is an imminent infrastructure crisis that the ecosystem needs to confront head-on.</p>
+
+<p>To understand why this matters, you need to understand what blob space is. EIP-4844, which went live with the Dencun upgrade in March 2024, introduced a new data type called "blobs" specifically designed as a cheaper data availability layer for L2 rollups. Before blobs, L2s had to post their transaction data as calldata on Ethereum L1, which was expensive because it competed for block space with every other Ethereum transaction. Blobs gave L2s their own dedicated lane, with a separate fee market and a target of 3 blobs per block (with a maximum of 6). This dramatically reduced L2 transaction costs -- in some cases by over 90%.</p>
+
+<p>But here is the problem: that dedicated lane has a fixed capacity, and it is filling up fast. When I analyzed the data, Base alone was consuming roughly 30-35% of all blob space, with Arbitrum taking another 20-25%. That leaves a shrinking slice for every other L2 -- and there are dozens of them launching, including our own chain at Polynomial. The blob fee market works similarly to EIP-1559 for gas: when utilization exceeds the target, fees increase exponentially. When blob space fills up, L2 transaction costs do not increase linearly -- they spike dramatically, potentially erasing the cost advantages that make L2s attractive in the first place.</p>
+
+<p>The Pectra upgrade, planned for Ethereum, includes a proposal to increase the blob target from 3 to 6 per block (and the maximum from 6 to 9). This would roughly double the available blob space. But even a 2x increase may not be enough given current growth trajectories. The L2 ecosystem is expanding rapidly, with new chains launching almost weekly. Each new L2 adds demand for blob space, and the growth in on-chain activity on existing L2s continues to accelerate. We could easily find ourselves back at capacity within months of the upgrade.</p>
+
+<p>This thread ended up getting significant coverage, picked up by CoinDesk, BlockBeats, Gate.io, PANews, Binance Square, and COINOTAG across multiple languages. The reason it resonated is that it touches a nerve -- the entire Ethereum scaling roadmap is built on the assumption that L2s can post data cheaply to L1. If that assumption breaks down because blob space becomes scarce and expensive, it undermines the economic model of every rollup in the ecosystem.</p>
+
+<p>The longer-term solutions are on the roadmap -- full danksharding could eventually provide dramatically more blob space -- but those upgrades are years away. In the meantime, the ecosystem needs to think seriously about alternative data availability layers, more efficient data compression for rollups, and whether the current blob space allocation is sufficient for the L2 ecosystem we are building. As someone running an L2 for derivatives trading, this is not an abstract concern for me. The cost of posting data to Ethereum directly impacts the transaction fees our users pay, and I want to make sure the infrastructure can support the scale we are building toward.</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">55% of all blob space is consumed by just 2 chains.<br><br>At current growth rates, Ethereum L2 scaling is months away from breaking.<br><br>Here&#39;s the data: <a href="https://t.co/placeholder">pic.twitter.com/placeholder</a></p>&mdash; Gautham Santhosh (@gauthamzzz) <a href="https://twitter.com/gauthamzzz/status/1880342051721736267">January 17, 2025</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><a href="https://x.com/gauthamzzz/status/1880342051721736267" target="_blank" rel="noopener noreferrer">Read the full thread on X</a></p>
+
+</div> <div class="page-edit"></div> </div></div></div>
+    <script src="/assets/js/app.fbf2b762.js" defer></script><script src="/assets/js/21.42e52586.js" defer></script>
+  </body>
+</html>
